@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security in Online Transactions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo"><i class="fa-solid fa-shield-halved"></i> CyberSecStudy</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#threats">Threats</a></li>
+            <li><a href="#measures">Measures</a></li>
+            <li><a href="#analysis">Data</a></li>
+            <li><a href="#prediction" class="btn-nav">AI Detection</a></li>
+        </ul>
+        <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>A Study on <br><span class="highlight">Cyber Security</span><br> Affecting Online Transactions</h1>
+            <p>Exploring vulnerabilities, analyzing user awareness, and implementing AI-driven fraud detection for a safer digital economy.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="#prediction" class="btn btn-glass">Try AI Detection</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <i class="fa-solid fa-network-wired hero-icon"></i>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Cyber Security</h2>
+            <div class="about-content glass-card">
+                <p><strong>Cyber Security</strong> in online transactions refers to the technologies, processes, and practices designed to protect networks, devices, programs, and data from attack, damage, or unauthorized access during financial exchanges.</p>
+                <p>As digital banking and e-commerce grow exponentially, the <strong>importance</strong> of securing these transactions has never been higher. The key challenges involve staying ahead of sophisticated phishing schemes, securing legacy banking systems, and ensuring minimal friction for the end-user while maintaining robust authentication.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="threats" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Common Cyber Threats</h2>
+            <div class="grid-cards">
+                <div class="card glass-card">
+                    <i class="fa-solid fa-fish threat-icon"></i>
+                    <h3>Phishing</h3>
+                    <p>Deceptive emails or messages designed to trick users into revealing sensitive credentials.</p>
+                </div>
+                <div class="card glass-card">
+                    <i class="fa-solid fa-comment-sms threat-icon"></i>
+                    <h3>OTP Fraud</h3>
+                    <p>Scammers manipulate users into sharing their One-Time Passwords to authorize illicit transactions.</p>
+                </div>
+                <div class="card glass-card">
+                    <i class="fa-solid fa-bug threat-icon"></i>
+                    <h3>Malware & Spyware</h3>
+                    <p>Malicious software secretly installed to monitor and steal banking details from user devices.</p>
+                </div>
+                <div class="card glass-card">
+                    <i class="fa-brands fa-app-store-ios threat-icon"></i>
+                    <h3>Fake Payment Apps</h3>
+                    <p>Counterfeit applications that mimic legitimate banks to harvest login information.</p>
+                </div>
+                <div class="card glass-card">
+                    <i class="fa-regular fa-credit-card threat-icon"></i>
+                    <h3>Card Fraud</h3>
+                    <p>Skimming or cloning debit/credit cards to make unauthorized purchases online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="measures" class="section">
+        <div class="container">
+            <h2 class="section-title">Security Measures</h2>
+            <div class="measures-list">
+                <div class="measure-item">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <div>
+                        <h4>Two-Factor Authentication (2FA)</h4>
+                        <p>Adding an extra layer of security beyond just passwords.</p>
+                    </div>
+                </div>
+                <div class="measure-item">
+                    <i class="fa-solid fa-fingerprint"></i>
+                    <div>
+                        <h4>Biometric Authentication</h4>
+                        <p>Using unique biological traits like fingerprints or facial recognition.</p>
+                    </div>
+                </div>
+                <div class="measure-item">
+                    <i class="fa-solid fa-lock"></i>
+                    <div>
+                        <h4>Secure Payment Gateways</h4>
+                        <p>Encrypted channels that securely transmit transaction data.</p>
+                    </div>
+                </div>
+                <div class="measure-item">
+                    <i class="fa-solid fa-brain"></i>
+                    <div>
+                        <h4>AI Fraud Detection</h4>
+                        <p>Machine learning models that analyze transaction patterns in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="analysis" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Data Analysis & Survey Results</h2>
+            <div class="charts-container">
+                <div class="chart-wrapper glass-card">
+                    <h3>User Security Awareness</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+                <div class="chart-wrapper glass-card">
+                    <h3>Common Fraud Types Experienced</h3>
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prediction" class="section">
+        <div class="container">
+            <h2 class="section-title">AI Fraud Detection Model</h2>
+            <div class="prediction-container glass-card">
+                <form id="fraudForm">
+                    <div class="form-group">
+                        <label for="amount"><i class="fa-solid fa-indian-rupee-sign"></i> Transaction Amount</label>
+                        <input type="number" id="amount" placeholder="e.g., 5000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time"><i class="fa-regular fa-clock"></i> Transaction Time</label>
+                        <input type="time" id="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location"><i class="fa-solid fa-location-dot"></i> Location (City)</label>
+                        <input type="text" id="location" placeholder="e.g., Mumbai" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="device"><i class="fa-solid fa-laptop-mobile"></i> Device Type</label>
+                        <select id="device" required>
+                            <option value="mobile">Mobile App</option>
+                            <option value="desktop">Desktop Web</option>
+                            <option value="tablet">Tablet</option>
+                            <option value="unknown">Unknown/Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Analyze Transaction</button>
+                </form>
+
+                <div id="resultBox" class="result-box hidden">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conclusion" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title text-white">Conclusion & Future Scope</h2>
+            <div class="conclusion-content">
+                <p>The landscape of online transactions is continually evolving, and so are the threats that target them. Our study highlights that while traditional security measures like OTPs and passwords are necessary, they are no longer sufficient on their own.</p>
+                <p><strong>Future Scope:</strong> Integrating advanced Artificial Intelligence and Machine Learning algorithms directly into payment gateways will be critical. AI can dynamically assess risk factors in milliseconds, providing an invisible yet robust shield against cyber threats without disrupting the user experience.</p>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 Academic Project: A Study on Cyber Security Affecting Online Transactions.</p>
+        </footer>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
