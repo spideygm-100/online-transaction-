@@ -55,45 +55,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// AI Fraud Prediction Dummy Logic (Ready for Flask backend)
+// Browser-Based AI Fraud Prediction Logic (For GitHub Pages)
 const fraudForm = document.getElementById('fraudForm');
 const resultBox = document.getElementById('resultBox');
 
 fraudForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Fetch values
-    const amount = document.getElementById('amount').value;
+    // Fetch values from the form
+    const amount = parseFloat(document.getElementById('amount').value);
     const time = document.getElementById('time').value;
     const location = document.getElementById('location').value;
     const device = document.getElementById('device').value;
 
-    /* Note for Backend Integration:
-       Replace this setTimeout dummy logic with an actual fetch() call to your Flask API.
-       Example:
-       fetch('/api/predict', { method: 'POST', body: JSON.stringify({amount, time, location, device}) })
-    */
-
+    // Show loading state
     resultBox.classList.remove('hidden', 'safe', 'fraud');
-    resultBox.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Analyzing via AI Model...';
+    resultBox.className = 'result-box';
+    resultBox.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Analyzing transaction via in-browser model...';
 
+    // Simulate network delay and AI processing
     setTimeout(() => {
-        // Dummy logic: Transactions over 100,000 late at night are flagged
         const hour = parseInt(time.split(':')[0]);
         let isFraud = false;
+        let message = "Transaction Appears Safe.";
 
+        // Rule 1: High amount, late night, unknown device
         if (amount > 50000 && (hour < 6 || hour > 22) && device === 'unknown') {
             isFraud = true;
-        } else if (Math.random() > 0.8) { // 20% random chance to show fraud for demo
+            message = "Alert: High Probability of Fraud (High Amount, Unusual Hours, Unknown Device)!";
+        } 
+        // Rule 2: Unusually high amount
+        else if (amount > 100000) {
             isFraud = true;
+            message = "Alert: High Probability of Fraud (Unusually High Amount)!";
+        } 
+        // Rule 3: Random 15% chance to show fraud for demonstration purposes
+        else if (Math.random() > 0.85) { 
+            isFraud = true;
+            message = "Alert: Suspicious Pattern Detected by Model.";
         }
 
+        // Display results
         if (isFraud) {
             resultBox.className = 'result-box fraud';
-            resultBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Alert: High Probability of Fraud Detected!';
+            resultBox.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ${message}`;
         } else {
             resultBox.className = 'result-box safe';
-            resultBox.innerHTML = '<i class="fa-solid fa-circle-check"></i> Transaction Appears Safe.';
+            resultBox.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${message}`;
         }
-    }, 1500); // 1.5 second artificial delay for effect
+    }, 1500); // 1.5 second delay
 });
